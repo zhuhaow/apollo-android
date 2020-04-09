@@ -544,6 +544,7 @@ class SchemaTypeSpecBuilder(
         .build()
     return MethodSpec.methodBuilder(RESPONSE_MARSHALLER_PARAM_NAME)
         .addAnnotation(Annotations.SUPPRESS_UNCHECKED_WARNING)
+        .addAnnotation(Annotations.SUPPRESS_RAW_VALUE_WARNING)
         .addModifiers(Modifier.PUBLIC)
         .returns(ResponseFieldMarshaller::class.java)
         .addStatement("return \$L", marshallerType)
